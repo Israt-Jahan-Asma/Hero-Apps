@@ -1,19 +1,18 @@
 import React from 'react';
 import { Download, Star } from 'lucide-react';
 import { NavLink } from 'react-router';
-import useApps from '../useApps';
 
 
 const AppCards = ({app}) => {
    
-    const {image, downloads, companyName, ratingAvg}= app
+    const {image, downloads, title, ratingAvg, id}= app
 
     
     return (
-        <NavLink to='/app-details'>
+        <NavLink to={`/app-details/${id}`}>
             <div className=' bg-white rounded-md p-4 shadow-sm space-y-4'>
                 <img className='mx-auto rounded-md' src={image} alt="" />
-                <h3 className='font-medium text[20px]'> {companyName}</h3>
+                <h3 className='font-medium text[20px]'> {title}</h3>
                 <div className='flex justify-between '>
                     <div className='flex gap-2 bg-[#F1F5E8] items-center p-2 rounded-sm'>
                         <Download className='w-4 h-4 text-[#00D390]'/>

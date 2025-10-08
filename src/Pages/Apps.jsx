@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import useApps from '../Components/useApps';
+import useApps from '../Hooks/useApps';
 import AppCards from '../Components/AppCards/AppCards';
 import { Search } from 'lucide-react';
+import { Link } from 'react-router';
 
 const Apps = () => {
-    const { apps, loading, error } = useApps()
+    const { apps, loading, error, id } = useApps()
 
     const [search, setSearch] = useState('')
     const term = search.trim().toLocaleLowerCase()
@@ -24,16 +25,18 @@ const Apps = () => {
                 </label>
 
             </div>
-            <div>
+            
+            <div >
                 {
                     searchApps.length> 0 ?<div className='grid grid-cols-1 md:grid-cols-4 gap-4 w-10/12 mx-auto py-5'>
                 {
-                     searchApps.map(app => (<AppCards key={apps.id} app={app}></AppCards>)) 
+                     searchApps.map(app => (<AppCards key={app.id} app={app}></AppCards>)) 
                 } 
             </div>: <p className='text-center font-bold text-6xl'>No Apps Found {search}</p>
                 }
             
-            </div>
+            </div> 
+            
         </div>
     );
 

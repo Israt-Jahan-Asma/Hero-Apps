@@ -1,7 +1,7 @@
 import React from 'react';
 import AppCards from './AppCards/AppCards';
 import { useLoaderData } from 'react-router';
-import useApps from './useApps';
+import useApps from '../Hooks/useApps';
 import { Github } from 'lucide-react';
 
 const TrendingApps = () => {
