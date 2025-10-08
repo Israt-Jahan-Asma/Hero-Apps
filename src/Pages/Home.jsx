@@ -1,9 +1,15 @@
 import React from 'react';
+import Banner from '../Components/Banner';
+import States from '../Components/States';
+import TrendingApps from '../Components/TrendingApps';
 
 const Home = () => {
     return (
         <div>
-            <h1>Home</h1>
+            <Banner></Banner>
+            <States></States>
+            <TrendingApps></TrendingApps>
+            
         </div>
     );
 };

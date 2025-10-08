@@ -1,0 +1,218 @@
+[
+  {
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    "title": "FocusMate Pro",
+    "companyName": "MindWorks Inc.",
+    "id": 1,
+    "description": "FocusMate Pro helps users eliminate distractions and maintain peak productivity. With AI-driven reminders, ambient soundscapes, and smart scheduling, it enhances your daily workflow and keeps you in control of your time and focus effortlessly.",
+    "size": 56,
+    "reviews": 423,
+    "ratingAvg": 4.6,
+    "downloads": 52000,
+    "ratings": [
+      { "name": "1 star", "count": 12 },
+      { "name": "2 star", "count": 23 },
+      { "name": "3 star", "count": 34 },
+      { "name": "4 star", "count": 102 },
+      { "name": "5 star", "count": 252 }
+    ]
+  },
+  {
+    "image": "https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=800&q=80",
+    "title": "CodeCraft Studio",
+    "companyName": "DevNest Labs",
+    "id": 2,
+    "description": "CodeCraft Studio empowers developers to build, test, and deploy apps efficiently. It includes syntax highlighting, AI auto-completion, real-time debugging, and collaboration features that make coding seamless whether you’re a beginner or professional.",
+    "size": 88,
+    "reviews": 698,
+    "ratingAvg": 4.8,
+    "downloads": 94000,
+    "ratings": [
+      { "name": "1 star", "count": 10 },
+      { "name": "2 star", "count": 15 },
+      { "name": "3 star", "count": 42 },
+      { "name": "4 star", "count": 160 },
+      { "name": "5 star", "count": 471 }
+    ]
+  },
+  {
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    "title": "FitTrack Daily",
+    "companyName": "Healthify Ltd.",
+    "id": 3,
+    "description": "FitTrack Daily tracks your workouts, calories, and sleep cycles. It integrates with wearables to provide precise insights, personal challenges, and goal-based motivation for a healthier and more energetic lifestyle every day.",
+    "size": 72,
+    "reviews": 512,
+    "ratingAvg": 4.4,
+    "downloads": 87500,
+    "ratings": [
+      { "name": "1 star", "count": 24 },
+      { "name": "2 star", "count": 38 },
+      { "name": "3 star", "count": 60 },
+      { "name": "4 star", "count": 150 },
+      { "name": "5 star", "count": 240 }
+    ]
+  },
+  {
+    "image":  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+    "title": "PhotoVista Pro",
+    "companyName": "PixelWave Studio",
+    "id": 4,
+    "description": "PhotoVista Pro provides advanced editing tools, filters, and AI-based enhancements that bring creativity to life. Perfect for both photographers and casual users who love to make their photos stand out effortlessly.",
+    "size": 98,
+    "reviews": 1040,
+    "ratingAvg": 4.9,
+    "downloads": 120000,
+    "ratings": [
+      { "name": "1 star", "count": 9 },
+      { "name": "2 star", "count": 18 },
+      { "name": "3 star", "count": 45 },
+      { "name": "4 star", "count": 210 },
+      { "name": "5 star", "count": 758 }
+    ]
+  },
+  {
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    "title": "TaskFlow Manager",
+    "companyName": "ProTasker Inc.",
+    "id": 5,
+    "description": "TaskFlow Manager simplifies project management with intuitive boards, progress tracking, and team chat. Designed to streamline workflows, it ensures smooth coordination and timely task delivery for businesses and individuals alike.",
+    "size": 64,
+    "reviews": 387,
+    "ratingAvg": 4.5,
+    "downloads": 66000,
+    "ratings": [
+      { "name": "1 star", "count": 14 },
+      { "name": "2 star", "count": 21 },
+      { "name": "3 star", "count": 49 },
+      { "name": "4 star", "count": 112 },
+      { "name": "5 star", "count": 191 }
+    ]
+  },
+  {
+    "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+    "title": "Learnify",
+    "companyName": "BrightMind Co.",
+    "id": 6,
+    "description": "Learnify offers engaging video courses, quizzes, and personalized learning paths to master new skills. Its sleek design and progress tracking make learning convenient, interactive, and goal-driven for students of all levels.",
+    "size": 79,
+    "reviews": 834,
+    "ratingAvg": 4.7,
+    "downloads": 98000,
+    "ratings": [
+      { "name": "1 star", "count": 19 },
+      { "name": "2 star", "count": 29 },
+      { "name": "3 star", "count": 68 },
+      { "name": "4 star", "count": 210 },
+      { "name": "5 star", "count": 508 }
+    ]
+  },
+  {
+    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+    "title": "TravelMate Explorer",
+    "companyName": "WanderGo Ltd.",
+    "id": 7,
+    "description": "TravelMate Explorer is your ultimate travel planner. From curated itineraries to real-time weather and budget tracking, it helps adventurers explore confidently while saving time and money on every trip.",
+    "size": 82,
+    "reviews": 912,
+    "ratingAvg": 4.8,
+    "downloads": 130000,
+    "ratings": [
+      { "name": "1 star", "count": 15 },
+      { "name": "2 star", "count": 27 },
+      { "name": "3 star", "count": 62 },
+      { "name": "4 star", "count": 224 },
+      { "name": "5 star", "count": 584 }
+    ]
+  },
+  {
+    "image":  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+    "title": "BudgetEase",
+    "companyName": "FinWise Corp.",
+    "id": 8,
+    "description": "BudgetEase is a smart financial app that tracks spending, sets savings goals, and provides visual insights into your habits. Its simple dashboard keeps budgeting effortless and stress-free for everyone.",
+    "size": 68,
+    "reviews": 621,
+    "ratingAvg": 4.3,
+    "downloads": 73000,
+    "ratings": [
+      { "name": "1 star", "count": 25 },
+      { "name": "2 star", "count": 37 },
+      { "name": "3 star", "count": 70 },
+      { "name": "4 star", "count": 180 },
+      { "name": "5 star", "count": 309 }
+    ]
+  },
+  {
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+    "title": "NoteHive",
+    "companyName": "SmartTools Inc.",
+    "id": 9,
+    "description": "NoteHive organizes your thoughts, ideas, and to-do lists in one secure space. With cloud sync, voice notes, and color-coded folders, it’s designed to boost productivity and keep creativity flowing effortlessly.",
+    "size": 49,
+    "reviews": 472,
+    "ratingAvg": 4.5,
+    "downloads": 58000,
+    "ratings": [
+      { "name": "1 star", "count": 18 },
+      { "name": "2 star", "count": 30 },
+      { "name": "3 star", "count": 48 },
+      { "name": "4 star", "count": 140 },
+      { "name": "5 star", "count": 236 }
+    ]
+  },
+  {
+    "image": "https://images.unsplash.com/photo-1590608897129-79da98d1596a?auto=format&fit=crop&w=800&q=80",
+    "title": "SafeHome Security",
+    "companyName": "GuardTech Systems",
+    "id": 10,
+    "description": "SafeHome Security lets users monitor their home remotely with live HD cameras, motion alerts, and cloud storage. Its intelligent AI detection system ensures complete peace of mind and safety wherever you are.",
+    "size": 110,
+    "reviews": 1024,
+    "ratingAvg": 4.9,
+    "downloads": 140000,
+    "ratings": [
+      { "name": "1 star", "count": 11 },
+      { "name": "2 star", "count": 19 },
+      { "name": "3 star", "count": 38 },
+      { "name": "4 star", "count": 220 },
+      { "name": "5 star", "count": 736 }
+    ]
+  },
+  {
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+    "title": "GlamUp Beauty",
+    "companyName": "LuxeCos Labs",
+    "id": 11,
+    "description": "GlamUp Beauty provides daily skincare reminders, routine tracking, and virtual try-ons. It’s perfect for beauty lovers who want glowing skin with consistency and confidence using data-driven beauty insights.",
+    "size": 92,
+    "reviews": 541,
+    "ratingAvg": 4.6,
+    "downloads": 71000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 28 },
+      { "name": "3 star", "count": 55 },
+      { "name": "4 star", "count": 170 },
+      { "name": "5 star", "count": 268 }
+    ]
+  },
+  {
+    "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
+    "title": "ChefMate Recipes",
+    "companyName": "FoodieSoft",
+    "id": 12,
+    "description": "ChefMate Recipes offers step-by-step cooking guides, meal planners, and ingredient lists tailored to your preferences. Whether you’re a beginner or an expert, it makes home cooking fun, quick, and inspiring.",
+    "size": 75,
+    "reviews": 799,
+    "ratingAvg": 4.7,
+    "downloads": 102000,
+    "ratings": [
+      { "name": "1 star", "count": 17 },
+      { "name": "2 star", "count": 26 },
+      { "name": "3 star", "count": 59 },
+      { "name": "4 star", "count": 190 },
+      { "name": "5 star", "count": 507 }
+    ]
+  }
+]
