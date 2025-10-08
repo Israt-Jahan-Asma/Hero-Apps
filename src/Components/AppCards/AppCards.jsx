@@ -7,9 +7,10 @@ import useApps from '../useApps';
 const AppCards = ({app}) => {
    
     const {image, downloads, companyName, ratingAvg}= app
+
     
     return (
-        <NavLink to='/'>
+        <NavLink to='/app-details'>
             <div className=' bg-white rounded-md p-4 shadow-sm space-y-4'>
                 <img className='mx-auto rounded-md' src={image} alt="" />
                 <h3 className='font-medium text[20px]'> {companyName}</h3>

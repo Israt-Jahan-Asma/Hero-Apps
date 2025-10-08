@@ -6,7 +6,7 @@ import { NavLink } from 'react-router';
 
 const Banner = () => {
     return (
-        <div className='bg-[#f5f5f5] pt-20 text-center space-y-8'>
+        <div className='bg-[#f5f5f5] pt-20 text-center space-y-8 px-2 md:px-0'>
             <div>
                 <h1 className='text-7xl  font-bold'>
                 We Build <br /> <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#632EE3] to-[#9F62F2]'>Productive </span>Apps
