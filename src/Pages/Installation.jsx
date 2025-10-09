@@ -1,40 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import useApps from '../Hooks/useApps';
 import { Download, Key, Star } from 'lucide-react';
-
+import { toast } from 'react-toastify';
+import { loadAppList, updateAppList } from '../utils/localStorage'
 
 const Installation = () => {
     const [sortOrder, setOrder] = useState(null)
-    const [appList, setAppList] = useState([])
+    const [appList, setAppList] = useState(() => loadAppList())
 
-    useEffect(() => {
-        const saveList = JSON.parse(localStorage.getItem('Installed'))
-        if (saveList) setAppList(saveList)
-        console.log(saveList);
+    // useEffect(() => {
+    //     const saveList = JSON.parse(localStorage.getItem('Installed'))
+    //     if (saveList) setAppList(saveList)
 
-    }, [])
+    // }, [])
 
-    const sortedItem = (()=>{
-        if(sortOrder=== 'download-asc'){
-            return [...appList].sort((a,b)=> a.downloads - b.downloads)
-        } else if(sortOrder=== 'download-desc'){
-            return [...appList].sort((a,b)=> b.downloads - a.downloads)
-    } else{
-        return appList
-    }
-    }) ()
+    const sortedItem = (() => {
+        if (sortOrder === 'download-asc') {
+            return [...appList].sort((a, b) => a.downloads - b.downloads)
+        } else if (sortOrder === 'download-desc') {
+            return [...appList].sort((a, b) => b.downloads - a.downloads)
+        } else {
+            return appList
+        }
+    })()
 
     const handleRemoveBtn = (id) => {
-        const existingList = JSON.parse(localStorage.getItem('Installed')) 
-    
-        let updatedList = existingList.filter(app=> app.id !== id)
-        //for ui update
-        setAppList( updatedList)
+        const existingList = JSON.parse(localStorage.getItem('Installed'))
 
-        localStorage.setItem('Installed', JSON.stringify(updatedList))
-        }
-    
-;
+        let updatedList = existingList.filter(app => app.id !== id)
+        //for ui update
+        updateAppList(updatedList);
+
+        setAppList(updatedList);
+        toast('App is Uninstall!');
+
+    };
 
     return (
         <div className='text-center py-20 bg-[#f5f5f5]  '>
@@ -57,7 +57,7 @@ const Installation = () => {
                 {/* installed app card */}
 
                 {
-                    sortedItem.map(app => ( 
+                    sortedItem.map(app => (
                         <div className='bg-white md:flex gap-4 justify-between p-4 rounded-sm items-center space-y-3'>
                             <div className='md:flex gap-4 justify-between space-y-3'>
                                 <img className='md:w-20 md:h-20 rounded-sm mx-auto' src={app.image} alt="" />
@@ -82,7 +82,7 @@ const Installation = () => {
                                 </div>
                             </div>
                             <div>
-                                <button onClick={()=> handleRemoveBtn(app.id)} className='btn bg-[#00D390] text-white font-semibold px-10 py-4 rounded-sm'>Uninstall</button>
+                                <button onClick={() => handleRemoveBtn(app.id)} className='btn bg-[#00D390] text-white font-semibold px-10 py-4 rounded-sm'>Uninstall</button>
                             </div>
 
                         </div>

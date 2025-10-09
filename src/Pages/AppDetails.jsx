@@ -4,9 +4,11 @@ import useApps from '../Hooks/useApps';
 import downloadsIcon from '../assets/icon-downloads.png';
 import reviewIcon from '../assets/icon-ratings.png'
 import ratingIcon from '../assets/icon-review.png'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import ErrorApp from '../ErrorPage/ErrorApp';
 import { BarChart, Bar, CartesianGrid, Legend, Rectangle, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { updateAppList } from '../utils/localStorage';
+
 
 
 const AppDetails = () => {
@@ -25,30 +27,35 @@ const AppDetails = () => {
     }, [app]);
 
     if (!app) return <ErrorApp></ErrorApp>;
-
+    
     const { description, companyName, title, image, downloads, ratingAvg, reviews, size, ratings } = app;
 
-const chartData = ratings.map(r => ({
-  star: `${r.name}`,  // for Y-axis labels
-  users: r.count           // for X-axis values
-}));
+    const chartData = ratings.map(r => ({
+        star: `${r.name}`,
+        users: r.count
+    }));
 
 
+    // const handleInstallBtn = () => {
+    //     const existingList = JSON.parse(localStorage.getItem('Installed')) || [];
+    //     const isDuplicate = existingList.some(existingApp => existingApp.id === app.id);
 
-    const handleInstallBtn = () => {
-        const existingList = JSON.parse(localStorage.getItem('Installed')) || [];
-        const isDuplicate = existingList.some(existingApp => existingApp.id === app.id);
+    //     if (isDuplicate) {
+    //         setInstalled(true);
+    //         return;
+    //     }
 
-        if (isDuplicate) {
-            setInstalled(true);
-            return;
-        }
-
-        const updatedList = [...existingList, app];
-        localStorage.setItem('Installed', JSON.stringify(updatedList));
+    //     const updatedList = [...existingList, app];
+    //     localStorage.setItem('Installed', JSON.stringify(updatedList));
+    //     setInstalled(true);
+    //     toast.success('App installed successfully!');
+    // };
+    const updatedList = updateAppList(app); 
+    if (updatedList.some(a => a.id === app.id)) {
         setInstalled(true);
         toast.success('App installed successfully!');
-    };
+    }
+
 
     return (
         <>
@@ -103,7 +110,7 @@ const chartData = ratings.map(r => ({
                                     data={chartData}
                                     layout="vertical" >
                                     <CartesianGrid strokeDasharray="3 3" />
-                                    <XAxis type="number" dataKey="users"/>
+                                    <XAxis type="number" dataKey="users" />
                                     <YAxis type="category" dataKey="star" />
                                     <Tooltip />
                                     <Bar dataKey="users" fill="#FF8811" />
@@ -121,7 +128,7 @@ const chartData = ratings.map(r => ({
                 </div>
 
             </div>
-            <ToastContainer />
+
         </>
     );
 };
