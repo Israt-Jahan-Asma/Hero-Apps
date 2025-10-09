@@ -7,12 +7,15 @@ import Apps from '../Pages/Apps'
 import Installation from '../Pages/Installation'
 import AppDetails from '../Pages/AppDetails';
 import ErrorApp from '../ErrorPage/ErrorApp';
+import LoadingSpinner from '../Components/LoadingSpinner';
+
+
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
     
-    hydrateFallbackElement: <p>Loading...</p>,
+    hydrateFallbackElement: <LoadingSpinner></LoadingSpinner>,
     children:[
         {
             index:true,

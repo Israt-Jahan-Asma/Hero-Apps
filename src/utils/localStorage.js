@@ -27,3 +27,13 @@ export const updateAppList = (app) => {
     return [];
   }
 };
+
+export const saveAppList = (appList) => {
+  try {
+    localStorage.setItem('Installed', JSON.stringify(appList));
+    return appList;
+  } catch (err) {
+    console.log(err);
+    return [];
+  }
+};

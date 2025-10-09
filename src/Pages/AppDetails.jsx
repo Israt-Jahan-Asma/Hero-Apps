@@ -7,7 +7,7 @@ import ratingIcon from '../assets/icon-review.png'
 import { toast } from 'react-toastify';
 import ErrorApp from '../ErrorPage/ErrorApp';
 import { BarChart, Bar, CartesianGrid, Legend, Rectangle, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { updateAppList } from '../utils/localStorage';
+import { updateAppList, loadAppList } from '../utils/localStorage';
 
 
 
@@ -21,7 +21,7 @@ const AppDetails = () => {
 
     useEffect(() => {
         if (!app) return;
-        const existingList = JSON.parse(localStorage.getItem('Installed')) || [];
+        const existingList = loadAppList(); 
         const isAlreadyInstalled = existingList.some(existingApp => existingApp.id === app.id);
         setInstalled(isAlreadyInstalled);
     }, [app]);
@@ -36,7 +36,7 @@ const AppDetails = () => {
     }));
 
 
-    // const handleInstallBtn = () => {
+    const handleInstallBtn = () => {
     //     const existingList = JSON.parse(localStorage.getItem('Installed')) || [];
     //     const isDuplicate = existingList.some(existingApp => existingApp.id === app.id);
 
@@ -49,12 +49,13 @@ const AppDetails = () => {
     //     localStorage.setItem('Installed', JSON.stringify(updatedList));
     //     setInstalled(true);
     //     toast.success('App installed successfully!');
-    // };
-    const updatedList = updateAppList(app); 
+
+     const updatedList = updateAppList(app); 
     if (updatedList.some(a => a.id === app.id)) {
         setInstalled(true);
         toast.success('App installed successfully!');
     }
+    };
 
 
     return (

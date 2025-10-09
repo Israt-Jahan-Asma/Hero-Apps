@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import useApps from '../Hooks/useApps';
-import { Download, Key, Star } from 'lucide-react';
+import { Download, Star } from 'lucide-react';
 import { toast } from 'react-toastify';
-import { loadAppList, updateAppList } from '../utils/localStorage'
+import { loadAppList, saveAppList } from '../utils/localStorage'
 
 const Installation = () => {
     const [sortOrder, setOrder] = useState(null)
@@ -25,14 +24,14 @@ const Installation = () => {
     })()
 
     const handleRemoveBtn = (id) => {
-        const existingList = JSON.parse(localStorage.getItem('Installed'))
+         const existingList = loadAppList() 
 
         let updatedList = existingList.filter(app => app.id !== id)
         //for ui update
-        updateAppList(updatedList);
+        saveAppList(updatedList);
 
         setAppList(updatedList);
-        toast('App is Uninstall!');
+        toast.success('App is Uninstall!');
 
     };
 
