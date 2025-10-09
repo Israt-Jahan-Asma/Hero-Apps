@@ -57,7 +57,7 @@ const Installation = () => {
                 {/* installed app card */}
 
                 {
-                    sortedItem.map(app => (
+                    sortedItem.map(app => ( 
                         <div className='bg-white md:flex gap-4 justify-between p-4 rounded-sm items-center space-y-3'>
                             <div className='md:flex gap-4 justify-between space-y-3'>
                                 <img className='md:w-20 md:h-20 rounded-sm mx-auto' src={app.image} alt="" />

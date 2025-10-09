@@ -5,45 +5,55 @@ import downloadsIcon from '../assets/icon-downloads.png';
 import reviewIcon from '../assets/icon-ratings.png'
 import ratingIcon from '../assets/icon-review.png'
 import { ToastContainer, toast } from 'react-toastify';
+import ErrorApp from '../ErrorPage/ErrorApp';
+import { BarChart, Bar, CartesianGrid, Legend, Rectangle, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+
 
 const AppDetails = () => {
-  const { id } = useParams();
-  const { apps, loading, error } = useApps();
-  const [installed, setInstalled] = useState(false);
+    const { id } = useParams();
+    const { apps, loading, error } = useApps();
+    const [installed, setInstalled] = useState(false);
 
-  const app = apps.find(app => String(app.id) === id);
+    const app = apps.find(app => String(app.id) === id);
 
- 
-  useEffect(() => {
-    if (!app) return;
-    const existingList = JSON.parse(localStorage.getItem('Installed')) || [];
-    const isAlreadyInstalled = existingList.some(existingApp => existingApp.id === app.id);
-    setInstalled(isAlreadyInstalled);
-  }, [app]);
 
-  if (!app) return <p className="text-center py-10">App not found.</p>;
+    useEffect(() => {
+        if (!app) return;
+        const existingList = JSON.parse(localStorage.getItem('Installed')) || [];
+        const isAlreadyInstalled = existingList.some(existingApp => existingApp.id === app.id);
+        setInstalled(isAlreadyInstalled);
+    }, [app]);
 
-  const { description, companyName, title, image, downloads, ratingAvg, reviews, size } = app;
+    if (!app) return <ErrorApp></ErrorApp>;
 
-  const handleInstallBtn = () => {
-    const existingList = JSON.parse(localStorage.getItem('Installed')) || [];
-    const isDuplicate = existingList.some(existingApp => existingApp.id === app.id);
+    const { description, companyName, title, image, downloads, ratingAvg, reviews, size, ratings } = app;
 
-    if (isDuplicate) {
-      setInstalled(true);
-      return;
-    }
+const chartData = ratings.map(r => ({
+  star: `${r.name}`,  // for Y-axis labels
+  users: r.count           // for X-axis values
+}));
 
-    const updatedList = [...existingList, app];
-    localStorage.setItem('Installed', JSON.stringify(updatedList));
-    setInstalled(true);
-    toast.success('App installed successfully!');
-  };
+
+
+    const handleInstallBtn = () => {
+        const existingList = JSON.parse(localStorage.getItem('Installed')) || [];
+        const isDuplicate = existingList.some(existingApp => existingApp.id === app.id);
+
+        if (isDuplicate) {
+            setInstalled(true);
+            return;
+        }
+
+        const updatedList = [...existingList, app];
+        localStorage.setItem('Installed', JSON.stringify(updatedList));
+        setInstalled(true);
+        toast.success('App installed successfully!');
+    };
 
     return (
         <>
             <div className=' py-20 bg-[#f5f5f5] '>
-                <div className='w-11/12 mx-auto'>
+                <div className='w-10/12 mx-auto'>
                     <div className='flex flex-col md:flex-row gap-10 '>
                         <img className='md:w-80 h-80 object-cover' src={image} alt="" />
 
@@ -86,6 +96,21 @@ const AppDetails = () => {
                     {/* chart  */}
                     <div className='py-10 mt-10 border-y-1 border-gray-300'>
                         <h3 className='font-semibold text-2xl'> chart</h3>
+                        <div className='h-100'>
+
+                            <ResponsiveContainer >
+                                <BarChart
+                                    data={chartData}
+                                    layout="vertical" >
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis type="number" dataKey="users"/>
+                                    <YAxis type="category" dataKey="star" />
+                                    <Tooltip />
+                                    <Bar dataKey="users" fill="#FF8811" />
+                                </BarChart>
+                            </ResponsiveContainer>
+
+                        </div>
                     </div>
 
                     {/* description */}
