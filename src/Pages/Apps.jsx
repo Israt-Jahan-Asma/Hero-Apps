@@ -9,7 +9,7 @@ const Apps = () => {
 
     const [search, setSearch] = useState('')
     const term = search.trim().toLocaleLowerCase()
-    const searchApps = term? apps.filter(app=>app.companyName.toLocaleLowerCase().includes(term)) : apps
+    const searchApps = term? apps.filter(app=>app.title.toLocaleLowerCase().includes(term)) : apps
 
     
 
@@ -17,7 +17,7 @@ const Apps = () => {
         <div className='text-center py-20 bg-[#f5f5f5] space-y-4 mx-auto'>
             <h2 className='font-bold text-5xl'>Our All Applications</h2>
             <p className='text-[#627382]'>Explore All Apps on the Market developed by us. We code for Millions</p>
-            <div className='flex justify-between mx-auto w-10/12'>
+            <div className='flex flex-col md:flex-row justify-between items-center mx-auto w-10/12'>
                 <p className='font-semibold text-2xl'>({searchApps.length}) Apps Found</p>
                 <label className="input input-bordered bg-[#f5f5f5] flex items-center gap-2">
                     <Search className="text-gray-400" />
@@ -32,7 +32,7 @@ const Apps = () => {
                 {
                      searchApps.map(app => (<AppCards key={app.id} app={app}></AppCards>)) 
                 } 
-            </div>: <p className='text-center font-bold text-6xl'>No Apps Found {search}</p>
+            </div>: <p className='text-center font-bold text-4xl'>No Apps Found {search}</p>
                 }
             
             </div> 
