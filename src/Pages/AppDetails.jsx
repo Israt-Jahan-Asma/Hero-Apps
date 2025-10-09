@@ -1,20 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import useApps from '../Hooks/useApps';
 import downloadsIcon from '../assets/icon-downloads.png';
 import reviewIcon from '../assets/icon-ratings.png'
 import ratingIcon from '../assets/icon-review.png'
+import { ToastContainer, toast } from 'react-toastify';
 
 const AppDetails = () => {
     const { id } = useParams()
     const { apps, loading, error } = useApps()
+    const [installed, setInstalled] = useState(false);
 
     if (loading) return <p className="text-center py-10">Loading...</p>;
     if (error) return <p className="text-center text-red-500">Error loading app details.</p>;
 
     const app = apps.find(app => String(app.id) === id)
-    const { description, companyName, title, image, downloads, ratingAvg, ratings, reviews, size } = app
-    console.log(app);
+    const { description, companyName, title, image, downloads, ratingAvg, ratings, reviews, size } = app 
+
+    const handleInstallBtn = () => {
+        setInstalled(true);
+        return toast.success('App installed')
+    }
 
 
     return (
@@ -52,7 +58,8 @@ const AppDetails = () => {
                                 </div>
                             </div>
                             <div>
-                                <button class="btn bg-[#00D390] text-white text-[20px] py-6 font-medium">Install Now ({size} MB)</button></div>
+                                <button onClick={() => handleInstallBtn()} disabled={installed} className="btn bg-[#00D390] text-white text-[20px] py-6 font-medium"> {installed ? "Installed" : `Install Now (${size} MB)`}</button>
+                            </div>
 
                         </div>
 
@@ -72,6 +79,7 @@ const AppDetails = () => {
                 </div>
 
             </div>
+            <ToastContainer />
         </>
     );
 };

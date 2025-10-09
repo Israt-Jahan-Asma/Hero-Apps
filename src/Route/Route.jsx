@@ -6,11 +6,12 @@ import Home from '../Pages/Home';
 import Apps from '../Pages/Apps'
 import Installation from '../Pages/Installation'
 import AppDetails from '../Pages/AppDetails';
+import ErrorApp from '../ErrorPage/ErrorApp';
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
-    errorElement: <Errorpage></Errorpage>,
+    
     hydrateFallbackElement: <p>Loading...</p>,
     children:[
         {
@@ -29,7 +30,12 @@ export const router = createBrowserRouter([
         },
         {
             path:'/app-details/:id',
-            Component: AppDetails
+            Component: AppDetails,
+            errorElement: <ErrorApp></ErrorApp>
+        },
+        {
+            path:'*',
+            Component: Errorpage
         }
     ]
   },
