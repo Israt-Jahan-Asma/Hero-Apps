@@ -24,6 +24,18 @@ const Installation = () => {
     }
     }) ()
 
+    const handleRemoveBtn = (id) => {
+        const existingList = JSON.parse(localStorage.getItem('Installed')) 
+    
+        let updatedList = existingList.filter(app=> app.id !== id)
+        //for ui update
+        setAppList( updatedList)
+
+        localStorage.setItem('Installed', JSON.stringify(updatedList))
+        }
+    
+;
+
     return (
         <div className='text-center py-20 bg-[#f5f5f5]  '>
             <div className='w-10/12 mx-auto space-y-5'>
@@ -70,7 +82,7 @@ const Installation = () => {
                                 </div>
                             </div>
                             <div>
-                                <button className='bg-[#00D390] text-white font-semibold px-10 py-4 rounded-sm'>Uninstall</button>
+                                <button onClick={()=> handleRemoveBtn(app.id)} className='btn bg-[#00D390] text-white font-semibold px-10 py-4 rounded-sm'>Uninstall</button>
                             </div>
 
                         </div>
