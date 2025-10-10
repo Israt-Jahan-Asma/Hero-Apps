@@ -1,16 +1,15 @@
-# React + Vite
+# Hero App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Hero App is a modern React web application that showcases trending apps, allows installation management, and provides app details with ratings and downloads. Users can search, sort, and uninstall apps seamlessly. The app leverages localStorage to maintain installed apps across sessions and includes smooth loading spinners and toast notifications for a better user experience. It also provides interactive charts to visualize app data.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies
+- **React** – Core frontend library
+- **React Router** – Client-side routing
+- **Tailwind CSS** – Utility-first CSS framework for styling
+- **DaisyUI** – Tailwind CSS component library
+- **React Spinners** – Loading animations
+- **React Toastify** – Toast notifications
+- **Lucide Icons** – Icon library
+- **Recharts** – Charting and data visualization
+- **LocalStorage** – Persisting installed apps
